@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حساب التناسب الذهبي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="legend" onmouseover="showLegendEffect()">سعد الششتاوي</div>
+    <div class="legend-effect">أسطورة</div>
+    <div class="container">
+        <div class="input-box">
+            <input type="number" id="total-length" placeholder="أدخل الطول الكامل" required>
+            <input type="number" id="larger-part" placeholder="أدخل الجزء الأكبر" required>
+            <button id="goldenButton" onclick="calculateGoldenRatio()">احسب التناسب الذهبي</button>
+        </div>
+        <div class="result"></div>
+        <div class="golden-light"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

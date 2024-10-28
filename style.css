@@ -1,0 +1,161 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Legend Name Style */
+.legend {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: rgba(255, 215, 0, 0.6);
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Legend Effect */
+.legend-effect {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 5em;
+    color: gold;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 20;
+}
+
+/* Show effect on hover */
+.legend:hover + .legend-effect {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 1;
+}
+
+/* Background Effect */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Falling Numbers */
+.number {
+    position: absolute;
+    color: rgba(255, 215, 0, 0.5);
+    font-size: 1.5em;
+    opacity: 0.7;
+    animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100px); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    position: relative;
+}
+
+/* Input Box */
+.input-box {
+    background: #222;
+    border-radius: 20px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.4);
+    text-align: center;
+}
+
+/* Input Fields */
+.input-box input {
+    width: 90%;
+    margin: 10px 0;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Button Style */
+.input-box button {
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background: linear-gradient(45deg, gold, #ffd700);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Button Hover */
+.input-box button:hover {
+    transform: scale(1.1);
+}
+
+/* Result Text */
+.result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Golden and Red Effects */
+.golden-effect {
+    color: gold;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px gold, 0 0 20px gold; }
+    to { text-shadow: 0 0 20px gold, 0 0 30px gold; }
+}
+
+.red-effect {
+    color: red;
+    animation: glowRed 1s ease-in-out infinite alternate;
+}
+
+@keyframes glowRed {
+    from { text-shadow: 0 0 10px red, 0 0 20px red; }
+    to { text-shadow: 0 0 20px red, 0 0 30px red; }
+}
+
+/* Golden Light Effect */
+.golden-light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,215,0,1) 0%, rgba(255,215,0,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* Active Light Effect */
+.active-light {
+    transform: scale(10);
+    opacity: 0.5;
+}
